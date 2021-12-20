@@ -141,6 +141,6 @@ function Angle:Up() end
 --- 
 
 --- Sets pitch, yaw and roll to 0.
-This function is faster than doing it manually.
+--- This function is faster than doing it manually.
 --- 
 function Angle:Zero() end

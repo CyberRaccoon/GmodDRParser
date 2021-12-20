@@ -3,7 +3,7 @@
 --- 
 
 --- Adds simple Get/Set accessor functions on the specified table.
-Can also force the value to be set to a number, bool or string.
+--- Can also force the value to be set to a number, bool or string.
 --- 
 --- @param tab table
 --- @param key any
@@ -554,7 +554,7 @@ function DOF_Kill() end
 --- 
 
 --- Cancels any existing DOF post-process effects.
-Begins the DOF post-process effect.
+--- Begins the DOF post-process effect.
 --- 
 function DOF_Start() end
 
@@ -786,8 +786,8 @@ function error(lowercase)(message, errorLevel) end
 --- 
 
 --- Throws a Lua error but does not break out of the current call stack.
-This function will not print a stack trace like a normal error would.
-Essentially similar if not equivalent to 
+--- This function will not print a stack trace like a normal error would.
+--- Essentially similar if not equivalent to
 --- 
 --- @param arguments vararg
 function ErrorNoHalt(arguments) end
