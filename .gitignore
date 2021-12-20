@@ -2,3 +2,5 @@
 /venv/
 pagelisting
 cache
+globals.lua
+/class/

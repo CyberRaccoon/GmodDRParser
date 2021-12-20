@@ -30,8 +30,8 @@ class Entry:
         data = ''
         for description in self.desc:
             if description.text:
-                description.text.strip()
-            data += f'\n--- {description.text}'
+                description_text_strip = description.text.replace('\n','')
+            data += f'--- {description_text_strip}'
         return data
 
     @property
@@ -75,6 +75,7 @@ class Entry:
                f'{self.is_deprecated}' \
                f'\n{self.entry_name()}\n'
 
+
 def parse_class(cls_name: str):
     global cache
 
@@ -91,10 +92,12 @@ def parse_class(cls_name: str):
     class_desc = ''
     for desc in etree_fromstring.xpath('//div[@class="section"]/p'):
         class_desc += desc.text
+    class_desc = class_desc.strip('\n')
 
-    return f'--- {class_desc}\n---\n---\n---@class {cls_name}\n'
+    return f"--- {class_desc}\n---\n---@class {cls_name}\n---@type {cls_name}\n{cls_name}" + " = {}"
 
-def parsing(data: dict, type: str):
+
+def parsing(data: dict, type: str) -> Entry:
     global cache
 
     if data['address'] in cache:
@@ -119,7 +122,7 @@ def parsing(data: dict, type: str):
     return prepare_entry(etree_fromstring, function_name)
 
 
-def prepare_entry(etree, function_name):
+def prepare_entry(etree, function_name) -> Entry:
     global entry
 
     deprecated = len(etree.xpath('//div[@class="deprecated"]')) > 0
@@ -135,11 +138,15 @@ def prepare_entry(etree, function_name):
 
 def class_to_file(cls):
     result = ''
-    print(cls)
     current = ''
+
     for class_name in cls:
-        class_file = open(f'class/{class_name}.lua', 'w+')
-        class_file.write(parse_class(class_name))
+        file_name = f'{class_name}.lua'
+        if file_name not in os.listdir('class'):
+            class_file = open(f'class/{file_name}', 'w+')
+            class_file.write(parse_class(class_name))
+        else:
+            class_file = open(f'class/{file_name}', 'a+')
         class_methods = cls[class_name]
         for method in class_methods:
             result = result + method.__str__()
@@ -171,7 +178,6 @@ if __name__ == '__main__':
     for page in all_pages:
         # Parsing global
         if 'Global.' in page['address']:
-            print('global', page['address'])
             entry = parsing(page, 'globals')
             g_globals.write(entry.__str__())
 
@@ -182,7 +188,6 @@ if __name__ == '__main__':
                 continue
 
             class_name = page['address'].split(':')[0]
-            print(class_name, page['address'])
             if class_name not in classes:
                 if classes:
                     classes = class_to_file(classes)
