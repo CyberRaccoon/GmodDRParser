@@ -1,14 +1,11 @@
 --- 
 ---
----
 ---@class DForm
-
+---@type DForm
+DForm = {}
 --- This function is available in client state(s)
 --- 
-
---- Adds one or two items to the DForm.
-If this method is called with only one argument, it is added to the bottom of the form. If two arguments are passed, they are placed side-by-side at the bottom of the form.
---- Internally, this function is used by the various DForm functions to, for example, add labels to the left of buttons.
+--- Adds one or two items to the DForm.If this method is called with only one argument, it is added to the bottom of the form. If two arguments are passed, they are placed side-by-side at the bottom of the form.--- Internally, this function is used by the various DForm functions to, for example, add labels to the left of buttons.
 --- 
 --- @param left Panel
 --- @param right Panel
@@ -16,7 +13,6 @@ function DForm:AddItem(left, right) end
 
 --- This function is available in client state(s)
 --- 
-
 --- Adds a 
 --- 
 --- @param text string
@@ -27,7 +23,6 @@ function DForm:Button(text, concommand, args) end
 
 --- This function is available in client state(s)
 --- 
-
 --- Adds a 
 --- 
 --- @param label string
@@ -37,7 +32,6 @@ function DForm:CheckBox(label, convar) end
 
 --- This function is available in client state(s)
 --- 
-
 --- Adds a 
 --- 
 --- @param title string
@@ -47,7 +41,6 @@ function DForm:ComboBox(title, convar) end
 
 --- This function is available in client state(s)
 --- 
-
 --- Adds a 
 --- 
 --- @param help string
@@ -56,7 +49,6 @@ function DForm:ControlHelp(help) end
 
 --- This function is available in client state(s)
 --- 
-
 --- Adds a 
 --- 
 --- @param help string
@@ -65,7 +57,6 @@ function DForm:Help(help) end
 
 --- This function is available in client state(s)
 --- 
-
 --- Adds a 
 --- 
 --- @param label string
@@ -75,7 +66,6 @@ function DForm:ListBox(label) end
 
 --- This function is available in client state(s)
 --- 
-
 --- Adds a 
 --- 
 --- @param label string
@@ -88,7 +78,6 @@ function DForm:NumberWang(label, convar, min, max, decimals) end
 
 --- This function is available in client state(s)
 --- 
-
 --- Adds a 
 --- 
 --- @param label string
@@ -101,7 +90,6 @@ function DForm:NumSlider(label, convar, min, max, decimals) end
 
 --- This function is available in client state(s)
 --- 
-
 --- Creates a 
 --- 
 --- @return Panel
@@ -110,7 +98,6 @@ function DForm:PanelSelect() end
 
 --- This function is available in client state(s)
 --- 
-
 --- Creates a 
 --- 
 --- @param label string
@@ -122,7 +109,6 @@ function DForm:PropSelect(label, convar, models, height) end
 
 --- This function is available in client state(s)
 --- 
-
 --- Does nothing.
 --- 
 --- @deprecated
@@ -130,7 +116,6 @@ function DForm:Rebuild() end
 
 --- This function is available in client state(s)
 --- 
-
 --- Sets the title (header) name of the DForm. This is 
 --- 
 --- @param name string
@@ -138,7 +123,6 @@ function DForm:SetName(name) end
 
 --- This function is available in client state(s)
 --- 
-
 --- Adds a 
 --- 
 --- @param label string

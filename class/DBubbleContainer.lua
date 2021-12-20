@@ -1,11 +1,10 @@
 --- 
 ---
----
 ---@class DBubbleContainer
-
+---@type DBubbleContainer
+DBubbleContainer = {}
 --- This function is available in client state(s)
 --- 
-
 --- Sets the speech bubble position and size along with the dialog point position.
 --- 
 --- @param x number

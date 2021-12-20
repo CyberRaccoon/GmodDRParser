@@ -1,11 +1,10 @@
 --- 
 ---
----
 ---@class ControlPanel
-
+---@type ControlPanel
+ControlPanel = {}
 --- This function is available in client state(s)
 --- 
-
 --- Adds a control to the control panel.
 --- 
 --- @param type string
@@ -15,7 +14,6 @@ function ControlPanel:AddControl(type, controlinfo) end
 
 --- This function is available in client state(s)
 --- 
-
 --- Adds an item by calling 
 --- 
 --- @param panel Panel
@@ -23,7 +21,6 @@ function ControlPanel:AddPanel(panel) end
 
 --- This function is available in client state(s)
 --- 
-
 --- Creates a 
 --- 
 --- @param label string
@@ -36,7 +33,6 @@ function ControlPanel:ColorPicker(label, convarR, convarG, convarB, convarA) end
 
 --- This function is available in client state(s)
 --- 
-
 --- Sets control values of the control panel.
 --- 
 --- @param data table
@@ -44,7 +40,6 @@ function ControlPanel:ControlValues(data) end
 
 --- This function is available in client state(s)
 --- 
-
 --- Calls the given function with this panel as the only argument. Used by the spawnmenu to populate the control panel.
 --- 
 --- @param func function
@@ -52,7 +47,6 @@ function ControlPanel:FillViaFunction(func) end
 
 --- This function is available in client state(s)
 --- 
-
 --- Returns this control panel.
 --- 
 --- @return ControlPanel
@@ -60,7 +54,6 @@ function ControlPanel:GetEmbeddedPanel() end
 
 --- This function is available in client state(s)
 --- 
-
 --- Creates a 
 --- 
 --- @param label1 string
@@ -72,7 +65,6 @@ function ControlPanel:KeyBinder(label1, convar1, label2, convar2) end
 
 --- This function is available in client state(s)
 --- 
-
 --- Creates a 
 --- 
 --- @param convar string
@@ -85,7 +77,6 @@ function ControlPanel:MatSelect(convar, options, autostretch, width, height) end
 
 --- This function is available in client state(s)
 --- 
-
 --- Creates a 
 --- 
 --- @param group string
